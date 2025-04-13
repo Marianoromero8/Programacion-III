@@ -1,8 +1,95 @@
 /* Estilos específicos para la página index. Mobile-First*/
+.body {
+    color: #892020;
+}
 
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 150px;
+    border-top: 2px solid;
+    width: 100%;
+}
 
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+}
 
+.lista_ordenada {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    list-style: none;
+    gap: 50px;
+}
 
+.lista_ordenada li {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    background-color: azure;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video {
+    width: 80%;
+    height: 33vh;
+    justify-content: center;
+}
+
+.video-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 20px 0 20px;
+}
+
+.text-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+.section-mision {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-mision {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.section-mision p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
 
 
 /* Media queries para otras pantallas */
