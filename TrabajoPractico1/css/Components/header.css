@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100px;
+}
+
+.lista_ordenada {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    list-style: none;
+    gap: 50px;
+}
+
+.lista_ordenada li {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+}
+
+i {
+    color: rgb(239, 100, 14);
+    margin-right: 10px;
+}
