@@ -2,7 +2,8 @@
 .body {
     font-family: "Bungee Spice", sans-serif;
     font-weight: 200;
-    font-style: normal
+    font-style: normal;
+    background-color: #1235;
 }
 
 .footer {
@@ -24,6 +25,10 @@
     height: 100px;
 }
 
+.image {
+    background-color: transparent;
+}
+
 .lista_ordenada {
     display: flex;
     flex-direction: row;
@@ -43,18 +48,11 @@
     display: flex;
     justify-content: center;
     font-size: xx-large;
-    background-color: azure;
 }
 
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.video {
-    width: 80%;
-    height: 33vh;
     justify-content: center;
 }
 
@@ -64,6 +62,13 @@
     justify-content: center;
     margin: 0 20px 0 20px;
 }
+
+.video {
+    width: 80%;
+    height: 33vh;
+    justify-content: center;
+}
+
 
 .text-video {
     display: flex;
