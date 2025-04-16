@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Practico 1</title>
+    <link rel="stylesheet" href="./css/Pages/contact.css">
+    <link rel="stylesheet" href="./css/Pages/index.css">
+    <link rel="stylesheet" href="./css/Components/footer.css">
+    <link rel="stylesheet" href="./css/Components/header.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+        rel="stylesheet">
+
+</head>
+<body class="body">
+    <header class="header">
+        <div class="logo">
+            <img src="./img/utnlogo.svg" alt="logo UTN" class="image">
+        </div>
+        <nav class="nav">
+            <ul class="lista_ordenada">
+                <li><a href="index.html"><i class="fas fa-home "></i>Home</a>
+                </li>
+                <li><a href="servicios.html"><i
+                            class="fas fa-concierge-bell"></i>Servicios</a></li>
+                <li><a href="galeria.html"><i
+                            class="fas fa-image "></i>Galeria</a></li>
+                <li><a href="contact.html"><i
+                            class="fas fa-envelope"></i>Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="Formulario">
+            <h1>Formulario de contacto</h1>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="email">
+                <label for="email">Correo Electronico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="mensaje">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            <div class="selector-despegable">
+                <label for="selector">Grado de conformidad con la pagina</label>
+                <select id="selector" name="selector">
+                    <option value="Muy conforme">Muy Conforme</option>
+                    <option value="Conforme">Conforme</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Disconforme">Disconforme</option>
+                    <option value="Muy Disconforme">Muy disconforme</option>
+                </select>
+            </div>
+            <button type="submit">Terminar Formulario</button>
+            <div class="mensaje-final">
+                <p>Apreciamos cualquier feedback!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <p> © 2025 - Desarrollado por: Borri Marcos, Ramos Cavero
+                Luciano, Panzone Franco, Dentezano Julian, Romero Mariano</p>
+        </div>
+        <div>
+            <a href="https://github.com/Marianoromero8/Programacion-III"
+                target="_blank"><i class="fab fa-github"></i>Github</a>
+        </div>
+    </footer>
+</body>
+</html>
