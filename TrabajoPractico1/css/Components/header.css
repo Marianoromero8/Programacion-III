@@ -25,3 +25,27 @@ i {
     color: rgb(239, 100, 14);
     margin-right: 10px;
 }
+
+
+@media(max-width: 480px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 150px;
+    }
+
+    .lista_ordenada {
+        display: flex;
+        flex-direction: row;
+        font-size: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .lista_ordenada li {
+        display: flex;
+        flex-direction: row;
+
+    }
+}
