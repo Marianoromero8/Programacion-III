@@ -1,12 +1,27 @@
 /* Estilos específicos para la página contact. Mobile-First*/
+.Formulario {
+    display: flex;
+    width: 100%; 
+    padding: 20px; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px; 
+    transform: scale(1.1);
+}
 
-
+.Formulario label {
+    display: flex;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
 
 
 
 
 /* Media queries para otras pantallas */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .contact-form {
         width: 100%;
     }
@@ -17,4 +32,4 @@
         width: 100%;
     }
     
-} */
+}
