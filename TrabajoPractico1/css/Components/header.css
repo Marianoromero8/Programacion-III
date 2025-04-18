@@ -27,25 +27,34 @@ i {
 }
 
 
-@media(max-width: 480px) {
+@media (max-width: 768px) {
     .header {
-        display: flex;
         flex-direction: column;
-        margin-bottom: 150px;
+        align-items: center;
+        height: auto;
+        padding: 1rem;
     }
 
     .lista_ordenada {
-        display: flex;
-        flex-direction: row;
-        font-size: 10px;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 0.9rem;
+        padding: 0;
     }
 
     .lista_ordenada li {
-        display: flex;
-        flex-direction: row;
+        font-size: 1rem;
+        justify-content: center;
+    }
+}
 
+@media (max-width: 480px) {
+    .lista_ordenada {
+        font-size: 0.8rem;
+        gap: 10px;
+    }
+
+    .lista_ordenada li {
+        font-size: 0.8rem;
     }
 }
