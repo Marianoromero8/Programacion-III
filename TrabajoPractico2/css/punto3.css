@@ -1,0 +1,8 @@
+.resaltado {
+    background-color: rgba(237, 227, 47, 0.8);
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
