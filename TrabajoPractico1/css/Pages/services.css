@@ -27,11 +27,15 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .titulo-servicios {
     text-align: center;
     font-size: 2.5rem;
     margin: 2rem 0;
-    
+
 }
 
 .cards-container {
@@ -54,32 +58,33 @@
 
 .card:hover {
     transform: scale(1.05);
-    
+
 }
+
 .card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    
+
 }
 
 .card h2 {
     margin-top: 1rem;
     font-size: 1.5rem;
-    
+
 }
 
 .card p {
     margin: 1rem;
     font-size: 1rem;
-    
+
 }
 
 .card button {
-    
+
     border: none;
     padding: 0.6rem 1.2rem;
-    
+
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -101,4 +106,3 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
