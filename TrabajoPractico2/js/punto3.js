@@ -5,13 +5,13 @@ export function puntoTres(){
 
     botonResaltar.addEventListener("click", () => {
         parrafos.forEach((parr) => {
-            parr.classList.add("resaltado")
+            parr.classList.toggle("resaltado")
         })
     })
 
     botonOcultor.addEventListener("click", () => {
         parrafos.forEach((parr) => {
-            parr.classList.add("oculto")
+            parr.classList.toggle("oculto")
         })
     })
 }
