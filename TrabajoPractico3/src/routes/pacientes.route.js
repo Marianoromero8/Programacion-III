@@ -1,7 +1,11 @@
 const {Router} = require('express');
-const {getPacientes} = require('../controllers/API/pacientes.controller.js')
+const pacientesController = require('../controllers/API/pacientes.controller.js')
 const rutaPacientes = Router();
-rutaPacientes.get('/', getPacientes);
+rutaPacientes.get('/', pacientesController.list);
+rutaPacientes.post('/',pacientesController.create);
+rutaPacientes.put('/:id',pacientesController.update);
+rutaPacientes.delete('/:id',pacientesController.delete);
+
 //Otras rutas CRUD
 
 
