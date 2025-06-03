@@ -1,0 +1,139 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* Título principal */
+h1, h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Encabezado */
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+header .titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+nav ul li a:hover {
+  opacity: 0.8;
+}
+
+/* Tabla de pacientes */
+table.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #2980b9;
+  color: white;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #eef;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Estilo base para todos los botones de acción */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+/* Botón de actualizar (azul) */
+.btn-actualizar {
+  background-color: #2980b9;
+  color: white;
+}
+
+.btn-actualizar:hover {
+  background-color: #1c5980;
+}
+
+/* Botón de eliminar (rojo) */
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
+
+/* Logo más pequeño y centrado */
+.logo {
+  height: 100px;  /* Ajusta el tamaño según lo necesites */
+  width: auto;
+  display: block;
+  margin: 0 auto 10px auto; /* centra y da espacio inferior */
+}
+
+/* Centrar contenido del título */
+.posicion__titulo {
+  text-align: center;
+  padding: 10px;
+}
