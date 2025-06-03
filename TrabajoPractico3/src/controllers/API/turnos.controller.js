@@ -1,6 +1,5 @@
 const turnos = [];
 
-
 exports.getTurnosByPaciente = (req, res) => {
     const { idPaciente } = req.params;
     const resultado = turnos.filter(t => t.idPaciente === idPaciente);

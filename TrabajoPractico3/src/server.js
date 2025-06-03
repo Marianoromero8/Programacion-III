@@ -10,7 +10,7 @@ dotenv.config()
 class Server {
   constructor (template=process.env.TEMPLATE || 'ejs') {
     this.app = express()
-    this.port = process.env.PORT || 3001
+    this.port = process.env.PORT || 3000
     this.middleware()
     //this.cors()
     this.engine(template)
