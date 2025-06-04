@@ -76,6 +76,14 @@ class PacientesModel {
   validateLogin(email, password) {
     return new Promise(async (resolve, reject) => {
       try {
+        // Lista de emails que tienen permiso para iniciar sesión
+        const adminEmails = ["email@gmail.com"];
+
+        // Verifica si el email está en la lista
+        if (!adminEmails.includes(email)) {
+          throw new Error("Acceso restringido a administradores");
+        }
+
         const userFound = await this.findByEmail(email, password);
 
         if (!userFound || userFound.password == null) {
