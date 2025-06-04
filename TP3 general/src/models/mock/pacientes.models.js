@@ -8,52 +8,6 @@ const jwt = require("jsonwebtoken");
 // ya tengo el npm i jsonwebtoken, falta el encryct
 
 class PacientesModel {
-  // constructor() {
-  //   this.data = [];
-  //   this.id = 1;
-  //   this.data.push(
-  //     new Persona(
-  //       "123456787",
-  //       "Sergio",
-  //       "Antozzi",
-  //       "email@gmail.com",
-  //       "12345",
-  //       this.id++
-  //     ),
-  //     new Persona(
-  //       "987456321",
-  //       "Jose",
-  //       "Perez",
-  //       "jose@gmail.com",
-  //       "98765",
-  //       this.id++
-  //     ),
-
-  //   );
-  //   //this.id = 3;
-  // }
-  // constructor() {
-  //   this.data = [];
-  //   this.id = 1;
-
-  //   this.data.push({
-  //     id: this.id++,
-  //     dni: "123456787",
-  //     nombre: "Sergio",
-  //     apellido: "Antozzi",
-  //     email: "email@gmail.com",
-  //     telefono: "12345"
-  //   });
-
-  //   this.data.push({
-  //     id: this.id++,
-  //     dni: "987456321",
-  //     nombre: "Jose",
-  //     apellido: "Perez",
-  //     email: "jose@gmail.com",
-  //     telefono: "98765"
-  //   });
-  // }
   constructor() {
     this.data = [];
     this.id = 1;
@@ -119,7 +73,6 @@ class PacientesModel {
     });
   }
 
-  // TODO: debo cambiar el validate ?? (este validate es para el login para obtener el token)
   validateLogin(email, password) {
     return new Promise(async (resolve, reject) => {
       try {
@@ -131,11 +84,9 @@ class PacientesModel {
 
         //payload, secreto, tiempo de expiracion
         const payload = {
-          //userId: userFound._id,
           userId: userFound.id,
           userEmail: userFound.email,
         };
-        //console.log("palabra secreta, pacientes model:", Config.secreteWord);
 
         const token = jwt.sign(payload, Config.secreteWord, {
           expiresIn: Config.expiresIn,
@@ -147,25 +98,7 @@ class PacientesModel {
     });
   }
 
-  /* createModel(dni, nombre, apellido, email, password) {
-    return new Promise((resolve, reject) => {
-      // Verificar duplicado de email
-      const pacienteExistente = this.data.find(p => p.email === email);
-      if (pacienteExistente !== undefined) {
-        reject(new Error("Ya existe un paciente con ese email"));
-      } else {
-        const nuevoPaciente = new Persona(dni, nombre, apellido, email, password, this.id);
-
-        this.id++;
-        this.data.push(nuevoPaciente);
-        resolve(nuevoPaciente);
-      }
-
-
-    });
-  } */
-
-  // si no quiero que haya un dni duplicado
+  // si no quiero que haya un dni o email duplicado
   createModel(dni, nombre, apellido, email, password) {
     return new Promise((resolve, reject) => {
       const pacienteExistente = this.data.find(p => p.email === email || p.dni === dni);

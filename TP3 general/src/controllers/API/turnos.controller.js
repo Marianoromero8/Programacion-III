@@ -14,18 +14,6 @@ class TurnosController {
         }
     }
 
-    /* async list(req, res) {
-        try {
-            console.log('Entró a turnosController.list');
-            const turnos = await turnosModel.list();
-            console.log('Turnos encontrados:', turnos);
-            res.status(200).json(turnos);
-        } catch (error) {
-            console.error('Error en turnosController.list:', error);
-            res.status(404).json({ mensaje: error.message });
-        }
-    } */
-
     async create(req, res) {
         try {
             const { fecha, hora, motivo, pacienteId } = req.body;
@@ -95,9 +83,9 @@ class TurnosController {
         try {
             const idPaciente = req.params.idPaciente;
             const turnos = await turnosModel.getByPacienteId(idPaciente);
-            res.status(200).json(turnos);  // Devuelve los turnos encontrados
+            res.status(200).json(turnos); 
         } catch (error) {
-            res.status(404).json({ error: error.message });  // Error si no se encuentran turnos
+            res.status(404).json({ error: error.message });
         }
     }
 }

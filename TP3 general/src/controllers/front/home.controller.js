@@ -15,26 +15,6 @@ const login = async (req, res) => {
     });
 };
 
-/* const pacientes = async (req, res) => {
-    try {
-        const pacientes = await pacientesModel.list();
-        // renderizo la vista para los pacientes
-        res.render("pacientes", {
-            title: "pacientes",
-            message: "Pacientes registrados",
-            pacientes: pacientes,
-            error: null
-        })
-    } catch (error) {
-        res.render("pacientes", {
-            title: "lista de pacientes",
-            message: "error",
-            pacientes: [],
-            error: "Error al cargar pacientes"
-        });
-    }
-}; */
-
 const pacientes = async (req, res) => {
     try {
         const pacientes = await pacientesModel.list();
@@ -58,7 +38,6 @@ const pacientes = async (req, res) => {
 const turnos = async (req, res) => {
     try {
         const turnos = await turnosModel.list();
-        // renderizo la vista para los pacientes
         res.render("turnos", {
             title: "turnos",
             message: "Turnos registrados",

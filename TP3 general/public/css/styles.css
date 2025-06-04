@@ -124,9 +124,19 @@ footer {
   background-color: #c0392b;
 }
 
-/* Logo más pequeño y centrado */
+/* Botón de login */
+.btn-login {
+  background-color: #2980b9;
+  color: white;
+}
+
+.btn-login:hover {
+  background-color: #1c5980;
+}
+
+/* Logo */
 .logo {
-  height: 100px;  /* Ajusta el tamaño según lo necesites */
+  height: 100px;
   width: auto;
   display: block;
   margin: 0 auto 10px auto; /* centra y da espacio inferior */

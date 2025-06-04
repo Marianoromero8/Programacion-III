@@ -25,10 +25,6 @@ const pacienteSchema = {
         password: Joi.string().required().min(5).max(100),
     }),
 
-    // updateID: Joi.object({
-    //     id: Joi.number().integer().positive().required()
-    // }),
-
     login: Joi.object({
         email: Joi.string().email().required().min(3).max(100),
         password: Joi.string().required().min(5).max(100),
