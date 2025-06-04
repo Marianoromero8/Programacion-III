@@ -21,7 +21,7 @@ h1 {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto */
   /* Por defecto: 4 columnas */
   gap: 15px;
   padding: 0 20px;
