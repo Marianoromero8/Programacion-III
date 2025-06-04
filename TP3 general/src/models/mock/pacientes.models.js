@@ -8,20 +8,100 @@ const jwt = require("jsonwebtoken");
 // ya tengo el npm i jsonwebtoken, falta el encryct
 
 class PacientesModel {
+  // constructor() {
+  //   this.data = [];
+  //   this.id = 1;
+  //   this.data.push(
+  //     new Persona(
+  //       "123456787",
+  //       "Sergio",
+  //       "Antozzi",
+  //       "email@gmail.com",
+  //       "12345",
+  //       this.id++
+  //     ),
+  //     new Persona(
+  //       "987456321",
+  //       "Jose",
+  //       "Perez",
+  //       "jose@gmail.com",
+  //       "98765",
+  //       this.id++
+  //     ),
+
+  //   );
+  //   //this.id = 3;
+  // }
+  // constructor() {
+  //   this.data = [];
+  //   this.id = 1;
+
+  //   this.data.push({
+  //     id: this.id++,
+  //     dni: "123456787",
+  //     nombre: "Sergio",
+  //     apellido: "Antozzi",
+  //     email: "email@gmail.com",
+  //     telefono: "12345"
+  //   });
+
+  //   this.data.push({
+  //     id: this.id++,
+  //     dni: "987456321",
+  //     nombre: "Jose",
+  //     apellido: "Perez",
+  //     email: "jose@gmail.com",
+  //     telefono: "98765"
+  //   });
+  // }
   constructor() {
     this.data = [];
+    this.id = 1;
+
     this.data.push(
-      new Persona(
-        "123456787",
-        "Sergio",
-        "Antozzi",
-        "email@gmail.com",
-        "12345",
-        1
-      )
+      {
+        id: this.id++,
+        dni: "123456787",
+        nombre: "Sergio",
+        apellido: "Antozzi",
+        email: "email@gmail.com",
+        password: "12345"
+      },
+      {
+        id: this.id++,
+        dni: "987456321",
+        nombre: "Jose",
+        apellido: "Perez",
+        email: "jose@gmail.com",
+        password: "98765"
+      },
+      {
+        id: this.id++,
+        dni: "456123789",
+        nombre: "Ana",
+        apellido: "Gomez",
+        email: "ana@gmail.com",
+        password: "45678"
+      },
+      {
+        id: this.id++,
+        dni: "789456123",
+        nombre: "Luis",
+        apellido: "Martinez",
+        email: "luis@gmail.com",
+        password: "78912"
+      },
+      {
+        id: this.id++,
+        dni: "321654987",
+        nombre: "Marta",
+        apellido: "Lopez",
+        email: "marta@gmail.com",
+        password: "32165"
+      }
     );
-    this.id = 2;
   }
+
 
   // aca va el findByEmail y la validacion
 

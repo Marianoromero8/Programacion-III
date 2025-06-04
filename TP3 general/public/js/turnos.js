@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-function renderTurnos(turnos) {
+/* function renderTurnos(turnos) {
   const tbody = document.getElementById('tabla-turnos-body');
   tbody.innerHTML = '';
 
@@ -210,9 +210,43 @@ function renderTurnos(turnos) {
     `;
     tbody.appendChild(fila);
   });
+} */
+
+function renderTurnos(turnos) {
+  const tbody = document.getElementById('tabla-turnos-body');
+  tbody.innerHTML = '';
+
+  turnos.forEach(turno => {
+    const paciente = turno.paciente || {};
+
+    const infoPaciente = paciente.id
+    
+      ? `${paciente.id} - ${paciente.nombre || ''} ${paciente.apellido || ''} - ${paciente.email || ''}`.trim()
+      : 'Paciente no disponible';
+
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+      <td>${turno.id}</td>
+      <td>${turno.fecha}</td>
+      <td>${turno.hora}</td>
+      <td>${turno.motivo}</td>
+      <td>${infoPaciente}</td>
+      <td>
+        <button class="btn btn-actualizar"">
+          <i class="fas fa-edit"></i> Actualizar
+        </button>
+        <button class="btn btn-eliminar">
+          <i class="fas fa-trash-alt"></i> Eliminar
+        </button>
+      </td>
+    `;
+    tbody.appendChild(fila);
+  });
 }
+
 
 function renderMensaje(msg) {
   const tbody = document.getElementById('tabla-turnos-body');
   tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">${msg}</td></tr>`;
 }
+

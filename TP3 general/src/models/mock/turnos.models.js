@@ -5,19 +5,59 @@ const pacientesModel = require('./pacientes.models.js');
 const jwt = require("jsonwebtoken");
 
 class TurnosModel {
+  // constructor() {
+  //   this.data = []; // Lista de turnos
+  //   this.id = 1;     // ID autoincremental de turnos
+  //   // Agregar un turno de ejemplo con pacienteId = 1
+  //   this.data.push({
+  //     id: this.id++,
+  //     fecha: "2025-09-21",
+  //     hora: "12:30",
+  //     motivo: "Consulta",
+  //     pacienteId: 1
+  //   });
+  // }
   constructor() {
-    this.data = []; // Lista de turnos
-    this.id = 1;     // ID autoincremental de turnos
-    //   TODO: Tiene que ser el pacienteID asi
-    // this.data.push(
-    //   {
-    //     fecha: "2025-09-21",
-    //     hora: "12:30",
-    //     motivo: "Consulta",
-    //     pacienteId: 1
+    this.data = [];
+    this.id = 1;
 
-    //   }
-    // )
+    this.data.push(
+      {
+        id: this.id++,
+        fecha: "2025-09-21",
+        hora: "12:30",
+        motivo: "Consulta general",
+        pacienteId: 1
+      },
+      {
+        id: this.id++,
+        fecha: "2025-09-22",
+        hora: "10:00",
+        motivo: "Control",
+        pacienteId: 2
+      },
+      {
+        id: this.id++,
+        fecha: "2025-09-23",
+        hora: "14:15",
+        motivo: "Revisión",
+        pacienteId: 3
+      },
+      {
+        id: this.id++,
+        fecha: "2025-09-24",
+        hora: "09:00",
+        motivo: "Consulta especialista",
+        pacienteId: 4
+      },
+      {
+        id: this.id++,
+        fecha: "2025-09-25",
+        hora: "11:45",
+        motivo: "Vacunación",
+        pacienteId: 5
+      }
+    );
   }
 
   // Crear nuevo turno
@@ -112,16 +152,115 @@ class TurnosModel {
     });
   }
 
-  list() {
+  /* list() {
     return new Promise((resolve, reject) => {
       // TODO: Ver si lo tengo que hacer, si es asi cambiar en el controlador
       if (this.data.length > 0) {
         resolve(this.data);
+        // TODO: Meto la data en un for y luego me envie el paciente 
       } else {
         reject(new Error("La lista turnos está vacia"));
       }
     });
+  } */
+
+  /* async list() {
+    if (this.data.length === 0) {
+      throw new Error("La lista de turnos está vacía");
+    }
+    // tomamos una lista vacia y luego en un bucle for creamos una lista nueva dandole el paciente
+    const turnosConPacientes = [];
+    for (const turno of this.data) {
+      try {
+        const paciente = await this.pacientesModel.getPacienteById(turno.pacienteId);
+        turnosConPacientes.push({
+          ...turno,
+          paciente,
+        });
+      } catch (error) {
+        // Si no se encuentra el paciente, puedes manejarlo así:
+        turnosConPacientes.push({
+          ...turno,
+          paciente: null, // o puedes hacer un continue para saltarlo
+        });
+      }
+    }
+
+    return turnosConPacientes;
+  } */
+
+  // para ver si puedo poner el paciente en general y no solo el pacienteId
+  /* async list() {
+    if (this.data.length === 0) {
+      throw new Error("La lista de turnos está vacía");
+    }
+
+    const turnosConPacientes = [];
+
+    // for (const turno of this.data) {
+    //   try {
+    //     const paciente = await this.pacientesModel.getPacienteById(turno.pacienteId);
+    //     turnosConPacientes.push({
+    //       ...turno,
+    //       paciente,
+    //     });
+    //   } catch (error) {
+    //     // Si no se encuentra el paciente, lo asignamos como null
+    //     turnosConPacientes.push({
+    //       ...turno,
+    //       paciente: null,
+    //     });
+    //   }
+    // }
+
+    for (const turno of this.data) {
+      try {
+        const paciente = await this.pacientesModel.getPacienteById(turno.pacienteId);
+        console.log("Paciente encontrado:", paciente); // 👈 esto
+        turnosConPacientes.push({
+          ...turno,
+          paciente,
+        });
+      } catch (error) {
+        console.log("Error al obtener paciente:", error.message); // 👈 esto también
+        turnosConPacientes.push({
+          ...turno,
+          paciente: null,
+        });
+      }
+    }
+
+    return turnosConPacientes;
+  } */
+
+  // para ver si puedo poner el paciente en general y no solo el pacienteId
+  async list() {
+    if (this.data.length === 0) {
+      throw new Error("La lista de turnos está vacía");
+    }
+
+    const turnosConPacientes = [];
+
+    for (const turno of this.data) {
+      try {
+        const paciente = await pacientesModel.getPacienteById(turno.pacienteId);
+        turnosConPacientes.push({
+          ...turno,
+          paciente,
+        });
+      } catch (error) {
+        turnosConPacientes.push({
+          ...turno,
+          paciente: null,
+        });
+      }
+    }
+
+    return turnosConPacientes;
   }
+
+
+
 
   /* list() {
     return new Promise((resolve) => {
