@@ -45,8 +45,17 @@ const grupo13 = [
    ```bash
    npm i
    ```
+4. Crear un archivo .env y pegar estas variables de entorno:
 
-4. Correr la API:
+   ```env
+    TEMPLATE=ejs
+    HOST=http://localhost
+    PORT=3000
+    SECRETE_WORD=palabra
+    EXPIRES_IN=24h
+   ```
+
+5. Correr la API:
 
    ```bash
    npm run dev
@@ -137,12 +146,4 @@ const grupo13 = [
 ##  Aclaraciones
 
 - Credenciales admin para el login: Email: email@gmail.com - Password: 12345 (si se desea modificar esto o eliminarlo, vaya a la funcion validateLogin() en el modelo de pacientes)
-- Variables de entorno usadas en el proyecto
-```env
-TEMPLATE=ejs
-HOST=http://localhost
-PORT=3000
-SECRETE_WORD=palabra
-EXPIRES_IN=24h
-```
 
