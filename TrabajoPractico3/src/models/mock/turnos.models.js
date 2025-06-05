@@ -1,4 +1,4 @@
-const Turno = require('./../mock/entities/turno.entity.js');
+const Turno = require('./entities/turno.entity.js');
 const pacientesModel = require('./pacientes.models.js');
 // importar el token
 const jwt = require("jsonwebtoken");

@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const pacienteSchema = require('./../schemas/pacienteSchema.js');
+const pacienteSchema = require('./pacienteSchema.js');
 
 const turnoSchema = {
 

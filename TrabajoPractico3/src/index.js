@@ -2,7 +2,7 @@ const Server = require('./server.js');
 const {connectDB} = require('./models/sqlite/config/db.js');
 
 
-connectDB()
+//connectDB()
 const server = new Server("ejs");
 
 server.listen();
