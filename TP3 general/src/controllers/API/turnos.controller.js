@@ -50,34 +50,6 @@ class TurnosController {
         }
     }
 
-    async update(req, res) {
-        try {
-            const id = req.params.id;
-            const { fecha, hora, motivo, paciente } = req.body;
-
-            const pacienteExistente = await pacientesModel.getById(paciente.id);
-            if (!pacienteExistente) {
-                res.status(404).json({ error: 'Paciente no encontrado' });
-                return;
-            }
-
-            const pacienteInstancia = new Paciente(
-                paciente.dni,
-                paciente.nombre,
-                paciente.apellido,
-                paciente.email,
-                paciente.id
-            );
-
-            const turnoActualizado = new Turno(fecha, hora, pacienteInstancia, motivo);
-            await turnosModel.update(id, turnoActualizado);
-
-            res.status(200).json({ message: "Turno actualizado" });
-        } catch (error) {
-            res.status(500).json({ error: error.message });
-        }
-    }
-
     // Obtener turnos por ID de paciente
     async getByPaciente(req, res) {
         try {

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const data = await response.json();
-    // Aquí renderizas los datos en la página
+    // renderiza los datos en la página
     renderPacientes(data);
   } catch (error) {
     console.error(error);

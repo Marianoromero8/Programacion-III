@@ -18,7 +18,7 @@ rutaPacientes.get('/:id',  verifyTokenMiddleware, validate(pacienteSchema.idPara
 //login de un paciente administrador con validateJOI
 rutaPacientes.post('/login', validate(pacienteSchema.login) ,pacientesController.login)
 // crear un paciente con validateJOI
-rutaPacientes.post('/',verifyTokenMiddleware, validate(pacienteSchema.create) ,pacientesController.create); // TODO: Necesita el token si alguien quiere crear un usuario?
+rutaPacientes.post('/',verifyTokenMiddleware, validate(pacienteSchema.create) ,pacientesController.create);
 // actualizar un paciente por id con validateJOI
 rutaPacientes.put('/:id',verifyTokenMiddleware, validate(pacienteSchema.idParam, "params") ,validate(pacienteSchema.create) ,pacientesController.update);
 // eliminar un paciente por id

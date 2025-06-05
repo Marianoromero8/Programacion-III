@@ -1,5 +1,4 @@
 const Turno = require('./../mock/entities/turno.entity.js');
-//const Paciente = require('./../mock/entities/paciente.entity.js'); // si se quiere validar tipo
 const pacientesModel = require('./pacientes.models.js');
 // importar el token
 const jwt = require("jsonwebtoken");
@@ -75,28 +74,6 @@ class TurnosModel {
       }
     });
   }
-
-
-
-
-  // Actualizar turno por id de turno
-  update(id, nuevoTurno) {
-    return new Promise((resolve, reject) => {
-      const turnoExistente = this.data.find((t) => t.id == id);
-      if (!turnoExistente) {
-        reject(new Error("Turno no encontrado"))
-      } else {
-        turnoExistente.fecha = nuevoTurno.fecha;
-        turnoExistente.hora = nuevoTurno.hora;
-        turnoExistente.motivo = nuevoTurno.motivo;
-        turnoExistente.paciente = nuevoTurno.paciente;
-
-        resolve(turnoExistente);
-      }
-    });
-  }
-
-
 
   // Eliminar turno por id de turno
 
@@ -178,11 +155,7 @@ class TurnosModel {
       }
     });
   }
-
-
-
 }
-
 
 module.exports = new TurnosModel();
 

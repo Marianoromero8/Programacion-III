@@ -1,11 +1,8 @@
 const pacientesModel = require('./../../models/mock/pacientes.models.js')
 const Paciente = require('./../../models/mock/entities/paciente.entity.js')
-//const pacienteSchema = require('./../schemas/pacienteSchema.js')
-//const validate = require('../middleware/validate');
 
 class PacientesController {
 
-    // TODO: aca agregar funcion login con el token de validacion
     async login(req, res) {
         try {
             // const email es lo mismo que req.body.email, lo mismo para password
@@ -13,8 +10,7 @@ class PacientesController {
 
             const token = await pacientesModel.validateLogin(email, password);
 
-            //res.status(200).json(token);
-            // para ver si puedo hacer el front end con localstorage
+            // para ver si puedo hacer el frontend con localstorage
             res.status(200).json({ data: token });
 
 

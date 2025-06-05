@@ -2,10 +2,6 @@ const Persona = require('./../mock/entities/paciente.entity.js');
 const Config = require("./../../config/config.js");
 // importar el token
 const jwt = require("jsonwebtoken");
-//import Persona from './../mock/entities/paciente.entity.js'
-// en package.json cambiamos "type" de "commonjs" a "module" para usar por import
-
-// ya tengo el npm i jsonwebtoken, falta el encryct
 
 class PacientesModel {
   constructor() {
@@ -55,9 +51,6 @@ class PacientesModel {
       }
     );
   }
-
-
-  // aca va el findByEmail y la validacion
 
   findByEmail(email, password) {
     return new Promise((resolve, reject) => {
@@ -130,8 +123,6 @@ class PacientesModel {
     });
   }
 
-
-
   // actualiza los datos del cliente con id = id
 
   update(id, paciente) {
@@ -147,7 +138,6 @@ class PacientesModel {
         if (emailDuplicado) {
           reject(new Error("El email ya está registrado por otro paciente"));
         } else {
-          // Actualizar datos (suponiendo que Joi ya validó que paciente tiene todos los campos)
           pacienteEncontrado.dni = paciente.dni;
           pacienteEncontrado.email = paciente.email;
           pacienteEncontrado.nombre = paciente.nombre;
@@ -159,11 +149,9 @@ class PacientesModel {
     });
   }
 
-
-
-
   // elimina el cliente con id = id
-
+  // no se puede eliminar los turnos vinculados al paciente que se borra porque eso me daria un bucle
+  // donde un modelo(pacientes) quiere importar del otro (turnos) y viceversa, dando errores
   delete(id) {
     return new Promise((resolve, reject) => {
       const pacienteEncontrado = this.data.find((p) => p.id == id);
@@ -171,6 +159,7 @@ class PacientesModel {
       if (!pacienteEncontrado) {
         reject(new Error("No se encuentra el paciente con el ID proporcionado"));
       } else {
+        // TODO: verificar si tiene turnos y si los tiene tambien borrarlos
         const pos = this.data.indexOf(pacienteEncontrado);
         this.data.splice(pos, 1);
         resolve(pacienteEncontrado);
@@ -178,7 +167,7 @@ class PacientesModel {
     });
   }
 
-  // devuelve la lista completa en un arreglo de strings
+  // devuelve la lista completa
   list() {
     return new Promise((resolve, reject) => {
       if (this.data.length > 0) {
@@ -188,7 +177,6 @@ class PacientesModel {
       }
     });
   }
-
 
   // si quiero obtener el paciente del mock
 

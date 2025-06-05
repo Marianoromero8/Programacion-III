@@ -1,5 +1,5 @@
 const Identificador = require("./identificador.entity");
-const Paciente = require("./paciente.entity"); // Asegúrate de que la ruta sea correcta
+const Paciente = require("./paciente.entity");
 
 class Turno extends Identificador {
 
@@ -8,7 +8,7 @@ class Turno extends Identificador {
         this.fecha = fecha;       // Fecha en formato 'YYYY-MM-DD'
         this.hora = hora;         // Hora en formato 'HH:mm'
         this.paciente = paciente; // Instancia de Paciente
-        this.motivo = motivo;     // Motivo del turno
+        this.motivo = motivo;     
     }
 }
 

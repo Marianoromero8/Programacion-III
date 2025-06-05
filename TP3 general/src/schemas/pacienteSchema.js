@@ -1,6 +1,3 @@
-// esta en Controladores con Express casos validacion con JOI
-
-// schemas/pacienteSchema.js
 const Joi = require('joi');
 
 const pacienteSchema = {

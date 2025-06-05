@@ -1,4 +1,3 @@
-// middleware/validate.js
 const validate = (schema, campo = "body") => {
     return (req, res, next) => {
         const { error } = schema.validate(req[campo]);
