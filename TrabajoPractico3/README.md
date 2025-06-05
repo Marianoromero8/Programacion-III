@@ -37,7 +37,7 @@ const grupo13 = [
 
    ```bash
    cd Programacion-III
-   cd "TP3 general"
+   cd TrabajoPractico3
    ```
 
 3. Instalar Express y las dependencias:
