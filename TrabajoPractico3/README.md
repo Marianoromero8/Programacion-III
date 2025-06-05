@@ -58,7 +58,7 @@ const grupo13 = [
 
 > URL base: `http://localhost:3000/api/v1/`
 
-### 📁 Endpoints - Pacientes
+###  Endpoints - Pacientes
 
 - **GET** todos los pacientes  
   ```http
