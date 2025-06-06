@@ -52,7 +52,7 @@ const grupo13 = [
     HOST=http://localhost
     PORT=3000
     SECRETE_WORD=unaClaveSuperSegura
-    EXPIRES_IN=24h
+    EXPIRES_IN=2h
    ```
 
 5. Correr la API:
