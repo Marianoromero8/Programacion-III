@@ -51,7 +51,7 @@ const grupo13 = [
     TEMPLATE=ejs
     HOST=http://localhost
     PORT=3000
-    SECRETE_WORD=palabra
+    SECRETE_WORD=unaClaveSuperSegura
     EXPIRES_IN=24h
    ```
 
