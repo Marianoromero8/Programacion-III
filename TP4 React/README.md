@@ -31,7 +31,7 @@ npm install
 Primero correr el backend
 
 ```
-cd Backend
+cd ../Backend
 
 npm start
 ```
@@ -41,7 +41,7 @@ Debe leerse ```Servidor corriendo en http://localhost:3000```
 Luego en otra terminal, correr el frontend
 
 ```
-cd Frontend
+cd ../Frontend
 
 npm run dev
 ```
