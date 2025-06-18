@@ -36,7 +36,7 @@ npm start
 
 Debe leerse ```Servidor corriendo en http://localhost:3000```
 
-Luego en otra terminal, desde la carpeta Frontend levantar el mismo:
+Luego en otra terminal, desde la carpeta `Frontend` levantar el mismo:
 
 ```
 npm run dev
