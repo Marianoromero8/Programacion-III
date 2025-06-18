@@ -28,31 +28,27 @@ npm install
 
 ## 3° Paso - Ejecucion del proyecto
 
-Primero correr el backend
+Primero desde la carpeta `Backend` ejecutar:
 
 ```
-cd ../Backend
-
 npm start
 ```
 
 Debe leerse ```Servidor corriendo en http://localhost:3000```
 
-Luego en otra terminal, correr el frontend
+Luego en otra terminal, desde la carpeta Frontend levantar el mismo:
 
 ```
-cd ../Frontend
-
 npm run dev
 ```
 
 ## 4° Paso - Acceso a la pagina
 
-Una vez que el frontend esta corriendo mostrara una url:
+Una vez que el frontend esta levantado mostrara una url:
 
 `http://localhost:5173/`
 
-En esa url encontraras el proyecto funcionando donde visualizaras las cartas de las personas con sus caracteristicas:
+Ingresando a la url a traves del navegador encontraras el proyecto en funcionamiento y las cartas de las personas con sus respectivos datos:
 
 `Nombre` -
 `Apellido` -
