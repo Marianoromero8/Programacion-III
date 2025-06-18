@@ -1,41 +1,24 @@
+// backend/models/index.js
 const { Sequelize } = require('sequelize');
+const config = require('../config/database');
 
 const env = process.env.NODE_ENV || 'development';
-
-// Configuración de la base de datos
-const config = {
-  username: process.env.DB_USER || 'app_user',
-  password: process.env.DB_PASSWORD || 'app_password',
-  database: process.env.DB_NAME || 'app_database',
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT || 5432,
-  dialect: 'postgres',
-  logging: env === 'development' ? console.log : false,
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
-};
+const dbConfig = config[env];
 
 const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
+  dbConfig.database,
+  dbConfig.username,
+  dbConfig.password,
   {
-    host: config.host,
-    port: config.port,
-    dialect: config.dialect,
-    logging: config.logging,
-    pool: config.pool
+    host: dbConfig.host,
+    port: dbConfig.port,
+    dialect: dbConfig.dialect,
+    logging: dbConfig.logging,
+    pool: dbConfig.pool,
+    dialectOptions: dbConfig.dialectOptions
   }
 );
 
-// Aquí puedes importar y definir tus modelos
-// const User = require('./user')(sequelize, Sequelize.DataTypes);
-
-// Exportar sequelize y modelos
 module.exports = {
   sequelize,
   Sequelize
