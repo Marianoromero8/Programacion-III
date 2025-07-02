@@ -6,6 +6,8 @@ require('dotenv').config();
 
 const { sequelize } = require('./models');
 const routes = require('./routes');
+// para el jwt
+const authRoutes = require('./routes/auth.route');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -30,6 +32,7 @@ if (process.env.NODE_ENV !== 'test') {
 
 // Rutas
 app.use('/api', routes);
+app.use('/api/auth', authRoutes); // JWT
 
 // Health check en la raíz
 app.get('/health', (req, res) => {
@@ -74,7 +77,7 @@ async function startServer() {
     });
   } catch (error) {
     console.error('❌ Unable to start server:', error);
-    // Continuar sin base de datos para desarrollo
+    // Continuar sin base de datos para desarrollov
     app.listen(PORT, () => {
       console.log(`⚠️  Server started without database on port ${PORT}`);
     });

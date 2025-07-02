@@ -1,4 +1,3 @@
-// backend/models/index.js
 const { Sequelize } = require('sequelize');
 const config = require('../config/database');
 
@@ -19,7 +18,10 @@ const sequelize = new Sequelize(
   }
 );
 
+const Videojuego = require('./videojuego.model')(sequelize, Sequelize.DataTypes);
+
 module.exports = {
   sequelize,
-  Sequelize
+  Sequelize,
+  Videojuego
 };
