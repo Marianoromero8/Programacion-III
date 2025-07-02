@@ -5,3 +5,10 @@ const grupo13 = [
   { id: 4, nombre: "Luciano", apellido: "Ramos Cavero"},
   { id: 5, nombre: "Marcos", apellido: "Borri"}
 ];
+
+Integrantes:
+  Mariano Romero
+  Franco Panzone
+  Julian Dantezano
+  Luciano Ramos Cavero
+  Marcos Borri
