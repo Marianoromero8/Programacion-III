@@ -18,7 +18,8 @@ const sequelize = new Sequelize(
   }
 );
 
-const Videojuego = require('./videojuego.model')(sequelize, Sequelize.DataTypes);
+// Importar la función que recibe sequelize y devuelve el modelo
+const { Videojuego } = require('./entity/videojuego.entity')(sequelize);
 
 module.exports = {
   sequelize,

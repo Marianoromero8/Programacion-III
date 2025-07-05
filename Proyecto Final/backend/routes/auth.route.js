@@ -7,6 +7,9 @@ const videojuegoSchema = require('../schemas/videojuegos.schemas');
 
 const router = express.Router();
 
+// TODO: En el readme aclarar que como es una aplicacion para una sola persona no es necesario complicar esta parte
+
+// en caso contrario hay que dividir esto en entity, controlador, modelo y dejar aca solo la ruta
 const users = [
   {
     id: 1,
@@ -21,6 +24,7 @@ router.post(
   validate(videojuegoSchema.login),
   async (req, res) => {
     const { username, password } = req.body;
+    // si tuviera que poner un modelo la funcion find deberia llevarme a un modelo con la logica que busque al usuario en la base de datos
     const user = users.find(u => u.username === username);
 
     if (!user) {
