@@ -1,4 +1,3 @@
-// backend/models/index.js
 const { Sequelize } = require('sequelize');
 const config = require('../config/database');
 
@@ -19,7 +18,11 @@ const sequelize = new Sequelize(
   }
 );
 
+// Importar la función que recibe sequelize y devuelve el modelo
+const { Videojuego } = require('./entity/videojuego.entity')(sequelize);
+
 module.exports = {
   sequelize,
-  Sequelize
+  Sequelize,
+  Videojuego
 };
