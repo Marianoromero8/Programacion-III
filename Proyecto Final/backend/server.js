@@ -31,14 +31,6 @@ if (process.env.NODE_ENV !== 'test') {
 // Rutas
 app.use('/api', routes);
 
-// Health check en la raíz
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'OK',
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime()
-  });
-});
 
 // Manejo de errores
 app.use((err, req, res, next) => {
